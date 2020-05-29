@@ -1,0 +1,4 @@
+{
+    "mongoURI":"mongodb+srv://vivekdarak1000:vivek123@devconnector-ofovt.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret":"mysecretoken"
+}
