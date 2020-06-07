@@ -10,7 +10,7 @@ const Navbar = ({auth,logout}) => {
   const guestlinks = (
 
     <ul>
-        <li><Link to="/">Developers</Link></li>
+        <li><Link to="/profiles">Developers</Link></li>
         <li><Link to="/register">Register</Link></li>
         <li><Link to="/login">Login</Link></li>
       </ul>
@@ -20,6 +20,15 @@ const Navbar = ({auth,logout}) => {
   const authlinks = (
 
     <ul>
+        <li><Link to="/posts">Posts</Link></li>
+        <li><Link to="/profiles">Developers</Link></li>
+        <li>
+          <Link to="/dashboard">
+          <i className="fas fa-user"></i>{' '}
+          <span className='hide-sm'>Dashboard</span>
+          </Link>
+          </li>
+
         <li><a onClick={logout}  href="#!" >
         <i className="fas fa-sign-out-alt"></i>{'  '}
         <span className='hide-sm'>Logout</span></a>
@@ -35,7 +44,7 @@ const Navbar = ({auth,logout}) => {
   return (
         <nav className="navbar bg-dark">
       <h1>
-        <Link to="index.html"><i className="fas fa-code"></i> DevConnector</Link>
+        <Link to="/"><i className="fas fa-code"></i> DevConnector</Link>
       </h1>
       {
         !auth.loading && (<Fragment>

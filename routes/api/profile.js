@@ -22,7 +22,7 @@ router.get('/me',auth,async (req,res)=>{
 
         if(!profile)
         {
-            return res.send('No profile Exists for this user');
+          return res.status(400).json({ msg: 'There is no profile for this user' });
         }
 
         //Display Profile
@@ -137,7 +137,7 @@ router.get('/',async (req,res)=>{
 router.get('/user/:user_id',async (req,res)=>{
 
     try {
-        const profile = await Profile.find({user:req.params.user_id}).populate('user',['name','avatar']);
+        const profile = await Profile.findOne({user:req.params.user_id}).populate('user',['name','avatar']);
         if(!profile)
         {
             res.json({msg:'profile not found'});
@@ -256,6 +256,8 @@ router.delete('/experience/:exp_id',auth,async (req,res)=>{
     const removeindex = profile.experience.map(item => item.id).indexOf(req.params.exp_id);
 
     profile.experience.splice(removeindex,1);
+
+    await profile.save();
 
     res.json(profile);
     

@@ -1,0 +1,6 @@
+{
+    "mongoURI":"mongodb+srv://vivekdarak1000:vivek123@devconnector-ofovt.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret":"mysecretoken",
+    "githubClientId":"d48990ffc4d3c7d99419",
+    "githubSecret":"526e9fa735600c6f23b41378718d4e92b5bb9864"
+}
