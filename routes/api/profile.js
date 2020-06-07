@@ -8,7 +8,7 @@ const User = require('../../models/Users');
 const mongoose = require('mongoose');
 const { check, validationResult } = require('express-validator');
 //const axios = require('axios');
-//const normalize = require('normalize-url');
+const normalize = require('normalize-url');
 
 //  @route    /api/profile/me
 //  @desc     test
